@@ -1,4 +1,4 @@
-require './Employee.rb'
+require './lib/Employee.rb'
 
 class Manager
 
@@ -14,7 +14,10 @@ class Manager
 
         @@all.push(self)
 
-        @employees = []
+    end
+
+    def employees
+        Employees.all { |employee| employee.manager == self }
     end
 
     def hire_employee(name, salary)

@@ -13,6 +13,11 @@ dwight = Employee.new("Dwight Schrute", 70000, michael)
 
 toby = Employee.new("Toby Flenderson", 50000, jan)
 
+puts "Managers:
+#{Manager.all}"
+
+puts "Employees:
+#{Employee.all}"
 
 #binding.pry
 puts "done"

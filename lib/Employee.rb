@@ -1,4 +1,4 @@
-require './Manager.rb'
+require './lib/Manager.rb'
 
 class Employee
 
@@ -13,8 +13,6 @@ class Employee
         @salary = salary
         @manager = manager
 
-        self.manager.hire_employee(self.name, self.salary)
-
         @@all.push(self)
     end
 
@@ -24,9 +22,9 @@ class Employee
         #of self
         @@all.select { |em| self.salary - 1000 < em.salary < self.salary + 1000 }
 
-        end
     end
 
+    #not returning the right thing...
     def self.all
         @@all
     end
