@@ -17,6 +17,9 @@ There are **no** tests! You will need to test your code on your own!
 ## Domain Modeling
 First step to this problem is to consider your domain. At Flatiron Mifflin, an `Employee` can only work in one department and a `Manager` oversees only one department. There are often many `Employee`s working for one `Manager` because if there are two `Managers` to "microgement" one employee, the employee might become "aggressive", "hostile" or "difficult."
 
+#employees to manager
+#manager to employees
+
 Here are some questions to consider:
 - What are your models?
 - What does your domain look like?
