@@ -1,5 +1,4 @@
-require 'Manager.rb'
-require 'pry'
+require './Manager.rb'
 
 class Employee
 
@@ -7,6 +6,7 @@ class Employee
     attr_accessor :salary, :manager
 
     @@all = []
+    @@former_employees = []
 
     def initialize(name, salary, manager)
         @name = name
@@ -45,8 +45,13 @@ class Employee
         manager = Manager.all.find { |manager| manager.department == department }
     end
 
+    def promote(department, age)
+        #new Manager instance
+        #use self.name, department, age
+        new_manager = Manager.new(self.name, department, age)
+
+        @@all = self.class.all.select { |employee| employee != self }
+        @@former_employees.push(self)
+    end
+
 end
-
-binding.pry
-
-puts "done"
