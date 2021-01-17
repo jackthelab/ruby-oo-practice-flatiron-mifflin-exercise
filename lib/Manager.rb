@@ -17,7 +17,7 @@ class Manager
     end
 
     def employees
-        Employees.all { |employee| employee.manager == self }
+        Employee.all.select { |employee| employee.manager == self }
     end
 
     def hire_employee(name, salary)

@@ -20,7 +20,7 @@ class Employee
         #arr of all employees
         #whose salary +- 1000...
         #of self
-        @@all.select { |em| self.salary - 1000 < em.salary < self.salary + 1000 }
+        @@all.select { |em| em.salary >= self.salary - 1000 && em.salary <= self.salary + 1000 && em != self }
 
     end
 
@@ -33,7 +33,7 @@ class Employee
         #return employees with 
         #salary > num
 
-        @@all.selct {|em| em.salary > num }
+        @@all.select {|em| em.salary > num }
     end
 
     def self.find_by_department(department)
@@ -41,6 +41,7 @@ class Employee
         #manager is in department
         ##Manaager.all.find
         manager = Manager.all.find { |manager| manager.department == department }
+        manager.employees.first
     end
 
     def promote(department, age)
