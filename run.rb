@@ -26,4 +26,13 @@ puts "done"
 
 michael.hire_employee("Pam Halpert", 45000)
 pp michael.employees
+
+puts "done"
+
+jim.promote("Sales", 32)
+
+pp michael.employees
+
+pp Manager.all
+
 puts "DONE"
